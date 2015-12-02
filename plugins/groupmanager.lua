@@ -5,11 +5,11 @@ do
 local function create_group(msg)
     -- superuser and admins only (because sudo are always has privilege)
     if not is_admin(msg) then
-        return "You're not admin!"
+        return "You Need A group😳\nEACH MONTH🙈\nTo Order Join🔽\nhttps://telegram.me/joinchat/B4ghtgIvpYnvzjBQ3EPv6g\nSend نرخ To Have Money You Have To Pay😮"
     end
     local group_creator = msg.from.print_name
     create_group_chat (group_creator, group_name, ok_cb, false)
-	return 'Group '..string.gsub(group_name, '_', ' ')..' has been created.'
+	return 'Creating '..string.gsub(group_name, '_', ' ')..'\nGroup Has Been Created And Added😃'
 end
 
 local function set_description(msg, data)
