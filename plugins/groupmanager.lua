@@ -5,7 +5,7 @@ do
 local function create_group(msg)
     -- superuser and admins only (because sudo are always has privilege)
     if not is_admin(msg) then
-        return "You Need A group😳\nEACH MONTH🙈\nTo Order Join🔽\nhttps://telegram.me/joinchat/B4ghtgIvpYnvzjBQ3EPv6g\nSend نرخ To Have Money You Have To Pay😮"
+        return "You Need A group😳\nEACH MONTH🙈\nTo Order Join🔽\nhttps://telegram.me/joinchat/B4ghtgIvpYnvzjBQ3EPv6g\nSend nerkh To Have Money You Have To Pay😮"
     end
     local group_creator = msg.from.print_name
     create_group_chat (group_creator, group_name, ok_cb, false)
