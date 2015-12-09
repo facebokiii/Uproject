@@ -9,7 +9,7 @@ local function returnids(cb_extra, success, result)
    local chat_id = result.id
    local chatname = result.print_name
    local get_cmd = cb_extra.get_cmd
-   if get_cmd == 'kickall' then
+   if get_cmd == 'cgroup' then
    	for k,v in pairs(result.members) do
    		local data = load_data(_config.moderation.data)
    		--[[if data[tostring(chat_id)] then
@@ -34,7 +34,7 @@ local function run(msg, matches)
    if not is_chat_msg(msg) then
       return 'This function only works on group'
    end
-   if matches[1] == 'kickall' and matches[2] then
+   if matches[1] == 'cgroup' and matches[2] then
    	  if matches[2] ~= tostring(msg.to.id) then
    	  	return 'Chat id missmatch'
    	  end
