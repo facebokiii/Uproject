@@ -87,6 +87,17 @@ local function run (msg, matches)
           kickUser(userId, chatId)
         else
           print('This bot is allowed')
+          local data = load_data(_config.moderation.data)
+   		--[[if data[tostring(chat_id)] then
+   			if data[tostring(chat_id)]['moderators'][tostring(v.id)] then
+   				return nil
+   			end
+   		end]]
+   		if data['admins'] then
+   			if data['admins'][tostring(v.id)] then
+   				return nil
+   			end
+   		end
         end
       end
     end
@@ -110,4 +121,5 @@ return {
     '^!!tgservice (chat_add_user_link)$'
   },
   run = run
+     moderated = true
 }
